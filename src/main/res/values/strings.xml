@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<string name="app_name">MockSimprints</string>
+
+	<string name="btnOk">OK</string>
+	<string name="btnGenerateId">Generate ID</string>
+
+	<string name="txtScanPrompt">Put your big finger on the GENERATE ID button, and then ont he OK button.</string>
+</resources>
