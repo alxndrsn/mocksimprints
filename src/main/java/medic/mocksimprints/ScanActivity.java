@@ -10,7 +10,10 @@ import com.simprints.libsimprints.Registration;
 
 import java.util.Random;
 
+import static com.simprints.libsimprints.Constants.SIMPRINTS_API_KEY;
+import static com.simprints.libsimprints.Constants.SIMPRINTS_MODULE_ID;
 import static com.simprints.libsimprints.Constants.SIMPRINTS_REGISTRATION;
+import static com.simprints.libsimprints.Constants.SIMPRINTS_USER_ID;
 import static medic.mocksimprints.MedicLog.trace;
 
 public class ScanActivity extends Activity {
@@ -21,6 +24,10 @@ public class ScanActivity extends Activity {
 		trace(this, "Started.");
 
 		setContentView(R.layout.scan);
+
+		setText(R.id.txtApiKey, "API Key: " + getIntent().getStringExtra(SIMPRINTS_API_KEY));
+		setText(R.id.txtUserId, "User ID: " + getIntent().getStringExtra(SIMPRINTS_USER_ID));
+		setText(R.id.txtModuleId, "Module ID: " + getIntent().getStringExtra(SIMPRINTS_MODULE_ID));
 	}
 
 //> CUSTOM EVENT LISTENERS
@@ -36,12 +43,16 @@ public class ScanActivity extends Activity {
 	public void btnGenerateId_onClick(View v) {
 		id = "asdf-" + Math.abs(new Random().nextInt());
 
-		TextView tv = (TextView) findViewById(R.id.txtGeneratedId);
-		tv.setText(id);
+		setText(R.id.txtGeneratedId, id);
 	}
 
 //> PRIVATE HELPERS
 	private Registration registration() {
 		return new Registration(id);
+	}
+
+	private void setText(int fieldId, CharSequence text) {
+		TextView tv = (TextView) findViewById(fieldId);
+		tv.setText(text);
 	}
 }
