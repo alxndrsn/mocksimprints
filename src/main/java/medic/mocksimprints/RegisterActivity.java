@@ -11,6 +11,7 @@ import java.util.Random;
 import static com.simprints.libsimprints.Constants.SIMPRINTS_REGISTRATION;
 
 public class RegisterActivity extends TaskActivity {
+	private final Random r = new Random();
 	private String id;
 
 	@Override String getTaskName() { return "Register"; }
@@ -19,7 +20,7 @@ public class RegisterActivity extends TaskActivity {
 
 //> CUSTOM EVENT LISTENERS
 	public void btnGenerateId_onClick(View v) {
-		id = "asdf-" + Math.abs(new Random().nextInt());
+		id = "" + ((char) ('a' + r.nextInt(26))) + r.nextInt(100);
 
 		setText(R.id.txtGeneratedId, id);
 	}
