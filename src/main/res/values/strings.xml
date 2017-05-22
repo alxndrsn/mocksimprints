@@ -5,5 +5,5 @@
 	<string name="btnOk">OK</string>
 	<string name="btnGenerateId">Generate ID</string>
 
-	<string name="txtScanPrompt">Put your big finger on the GENERATE ID button, and then ont he OK button.</string>
+	<string name="txtScanPrompt">Put your big finger on the GENERATE ID button, and then on the OK button.</string>
 </resources>
