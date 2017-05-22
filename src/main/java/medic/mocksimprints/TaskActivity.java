@@ -10,6 +10,7 @@ import static com.simprints.libsimprints.Constants.SIMPRINTS_API_KEY;
 import static com.simprints.libsimprints.Constants.SIMPRINTS_MODULE_ID;
 import static com.simprints.libsimprints.Constants.SIMPRINTS_USER_ID;
 import static medic.mocksimprints.MedicLog.trace;
+import static medic.mocksimprints.MedicLog.warn;
 
 abstract class TaskActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,15 @@ abstract class TaskActivity extends Activity {
 
 //> CUSTOM EVENT LISTENERS
 	public void btnOk_onClick(View v) {
+		trace(this, "btnOk_onClick()");
+try {
 		Intent i = new Intent();
 
 		populateIntent(i);
 
 		setResult(Activity.RESULT_OK, i);
 		finish();
+} catch(Exception ex) { warn(ex, "oops"); }
 	}
 
 //> PRIVATE HELPERS

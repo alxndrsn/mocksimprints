@@ -29,7 +29,7 @@ public final class MedicLog {
 		i(LOG_TAG, message, ex);
 	}
 
-	public static void warnException(Exception ex, String message, Object... extras) {
+	public static void warn(Exception ex, String message, Object... extras) {
 		message = String.format(message, extras);
 
 		w(LOG_TAG, message, ex);
