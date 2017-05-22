@@ -12,18 +12,8 @@
 			android:paddingTop="16dp"
 			android:paddingBottom="16dp"
 			android:orientation="vertical">
-		<TextView android:id="@+id/txtApiKey"
-				android:textSize="24sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"/>
-		<TextView android:id="@+id/txtUserId"
-				android:textSize="24sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"/>
-		<TextView android:id="@+id/txtModuleId"
-				android:textSize="24sp"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"/>
+		<include layout="@layout/task_head"/>
+
 		<TextView android:text="@string/txtScanPrompt"
 				android:textSize="24sp"
 				android:layout_width="fill_parent"
@@ -40,13 +30,7 @@
 				android:textSize="24sp"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"/>
-		<Button
-				android:text="@string/btnOk"
-				android:onClick="btnOk_onClick"
-				android:layout_height="wrap_content"
-				android:layout_width="wrap_content"
-				android:paddingTop="16dp"
-				android:paddingLeft="16dp"
-				android:paddingRight="16dp"/>
+
+		<include layout="@layout/task_foot"/>
 	</LinearLayout>
 </ScrollView>

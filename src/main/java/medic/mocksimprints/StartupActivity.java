@@ -11,7 +11,8 @@ public class StartupActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		trace(this, "Started.");
 
-		startActivity(new Intent(this, ScanActivity.class));
+		// Start an activity here if you want to test its layout
+		startActivity(new Intent(this, RegisterActivity.class));
 
 		finish();
 	}
