@@ -41,6 +41,10 @@ abstract class TaskActivity extends Activity {
 	}
 
 //> PRIVATE HELPERS
+	protected String getTextFrom(int fieldId) {
+		return ((TextView) findViewById(fieldId)).getText().toString();
+	}
+
 	protected void setText(int fieldId, CharSequence text) {
 		TextView tv = (TextView) findViewById(fieldId);
 		tv.setText(text);
