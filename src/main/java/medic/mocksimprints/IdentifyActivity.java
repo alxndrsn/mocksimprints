@@ -25,17 +25,12 @@ public class IdentifyActivity extends TaskActivity {
 	private ArrayList<Identification> identifications() {
 		ArrayList<Identification> ids = new ArrayList<>();
 		for(String id : getTextFrom(R.id.txtIds).split("\\s")) {
-			if(id.length() > 0) ids.add(new Identification(id, randomConfidence(), randomTier()));
+			if(id.length() > 0) {
+				int confidence = r.nextInt(99) + 1;
+				Tier tier = Tier.values()[4 - confidence / 20];
+				ids.add(new Identification(id, confidence, tier));
+			}
 		}
 		return ids;
-	}
-
-	private int randomConfidence() {
-		return r.nextInt(99) + 1;
-	}
-
-	private Tier randomTier() {
-		int n = r.nextInt(Tier.values().length);
-		return Tier.values()[n];
 	}
 }
