@@ -25,7 +25,7 @@ public class IdentifyActivity extends TaskActivity {
 	private ArrayList<Identification> identifications() {
 		ArrayList<Identification> ids = new ArrayList<>();
 		for(String id : getTextFrom(R.id.txtIds).split("\\s")) {
-			ids.add(new Identification(id, randomConfidence(), randomTier()));
+			if(id.length() > 0) ids.add(new Identification(id, randomConfidence(), randomTier()));
 		}
 		return ids;
 	}
